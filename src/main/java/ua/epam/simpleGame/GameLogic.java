@@ -1,4 +1,4 @@
-package com.company;
+package ua.epam.simpleGame;
 
 import java.util.Random;
 
@@ -20,11 +20,15 @@ public class GameLogic {
         }
     }
 
+    public enum GameResult {
+        DRAW, YOU_LOSE, YOU_WIN, INCORRECT_INPUT
+    }
+
     private Entity playerChoice;
     private Entity computerChoice;
-    private String result;
+    private GameResult result;
 
-    public GameLogic(){
+    public GameLogic() {
     }
 
 
@@ -60,16 +64,16 @@ public class GameLogic {
     private void gameResult() {
         if (playerChoice != null && computerChoice != null) {
             if (playerChoice.equals(computerChoice)) {
-                result = "Draw!";
+                result = GameResult.DRAW;
             }
             if (playerChoice.isBroken(computerChoice)) {
-                result = "You lose!";
+                result = GameResult.YOU_LOSE;
             }
-            if (computerChoice.isBroken(playerChoice)){
-                result = "You win!";
+            if (computerChoice.isBroken(playerChoice)) {
+                result = GameResult.YOU_WIN;
             }
         } else {
-            result = "Incorrect input. Try again!";
+            result = GameResult.INCORRECT_INPUT;
         }
     }
 
@@ -81,7 +85,7 @@ public class GameLogic {
         return computerChoice;
     }
 
-    public String getResult() {
+    public GameResult getResult() {
         return result;
     }
 }

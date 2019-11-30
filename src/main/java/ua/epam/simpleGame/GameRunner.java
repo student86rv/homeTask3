@@ -1,8 +1,10 @@
-package com.company;
+package ua.epam.simpleGame;
 
 import java.util.Scanner;
 
 public class GameRunner {
+
+    private static final String START_MESSAGE = "1=Rock, 2=Paper, 3=Scissors, 0=Quit";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -10,7 +12,7 @@ public class GameRunner {
 
         boolean quit = false;
         while (!quit) {
-            System.out.println("1=Rock, 2=Paper, 3=Scissors, 0=Quit");
+            System.out.println(START_MESSAGE);
             int choice = scanner.nextInt();
 
             if (choice == 0) {

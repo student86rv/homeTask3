@@ -1,4 +1,4 @@
-package com.company;
+package ua.epam.simpleGame;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -31,13 +31,13 @@ public class GameLogicTest {
         GameLogic.Entity computerChoice = gameLogic.getComputerChoice();
 
         if (computerChoice.equals(GameLogic.Entity.ROCK)) {
-            assertEquals(gameLogic.getResult(), "Draw!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.DRAW);
         }
         if (computerChoice.equals(GameLogic.Entity.PAPER)) {
-            assertEquals(gameLogic.getResult(), "You lose!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.YOU_LOSE);
         }
         if (computerChoice.equals(GameLogic.Entity.SCISSORS)) {
-            assertEquals(gameLogic.getResult(), "You win!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.YOU_WIN);
         }
     }
 
@@ -50,13 +50,13 @@ public class GameLogicTest {
         GameLogic.Entity computerChoice = gameLogic.getComputerChoice();
 
         if (computerChoice.equals(GameLogic.Entity.ROCK)) {
-            assertEquals(gameLogic.getResult(), "You win!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.YOU_WIN);
         }
         if (computerChoice.equals(GameLogic.Entity.PAPER)) {
-            assertEquals(gameLogic.getResult(), "Draw!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.DRAW);
         }
         if (computerChoice.equals(GameLogic.Entity.SCISSORS)) {
-            assertEquals(gameLogic.getResult(), "You lose!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.YOU_LOSE);
         }
     }
 
@@ -69,13 +69,13 @@ public class GameLogicTest {
         GameLogic.Entity computerChoice = gameLogic.getComputerChoice();
 
         if (computerChoice.equals(GameLogic.Entity.ROCK)) {
-            assertEquals(gameLogic.getResult(), "You lose!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.YOU_LOSE);
         }
         if (computerChoice.equals(GameLogic.Entity.PAPER)) {
-            assertEquals(gameLogic.getResult(), "You win!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.YOU_WIN);
         }
         if (computerChoice.equals(GameLogic.Entity.SCISSORS)) {
-            assertEquals(gameLogic.getResult(), "Draw!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.DRAW);
         }
     }
 
@@ -88,13 +88,13 @@ public class GameLogicTest {
         GameLogic.Entity computerChoice = gameLogic.getComputerChoice();
 
         if (computerChoice.equals(GameLogic.Entity.ROCK)) {
-            assertEquals(gameLogic.getResult(), "Incorrect input. Try again!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.INCORRECT_INPUT);
         }
         if (computerChoice.equals(GameLogic.Entity.PAPER)) {
-            assertEquals(gameLogic.getResult(), "Incorrect input. Try again!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.INCORRECT_INPUT);
         }
         if (computerChoice.equals(GameLogic.Entity.SCISSORS)) {
-            assertEquals(gameLogic.getResult(), "Incorrect input. Try again!");
+            assertEquals(gameLogic.getResult(), GameLogic.GameResult.INCORRECT_INPUT);
         }
     }
 }
